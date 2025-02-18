@@ -65,3 +65,12 @@ body{
     background-color: var(---primario);
     color: var(---oscuro);
 }
+.hero
+{
+    /*para regresar de unacarpeta*/ 
+    background-image: url("../img/hero.jpg");
+    background-repeat: no-repeat;
+    /*cover cubre la imagen con todo el tamaño*/
+    background-size: cover;
+    
+}
