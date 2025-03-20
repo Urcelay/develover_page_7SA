@@ -1,151 +1,167 @@
-:root{
-    ---blanco: #ffffff;
-    ---oscuro: #212121;
-    ---primario:#ffc107;
-    ---secundario:#0097a7;
-    ---gris: #757575;
-    
-}
-html{
-    /* conversion 62.5% * 16px = 10px*/
-    font-size:62.5%;
-    font-family: Krub, Arial, Helvetica, sans-serif;
-    /*modelo de caja*/
-    box-sizing:border-box;
+:root {
+    --blanco: #ffffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
 }
 
-*, *::beofre, *::after{
-    /*modelo de caja*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, ::after, *::before {
     box-sizing: inherit;
 }
 
-h1{
-    font-size: 3.8 rem;
-}
-h2{
-    font-size: 2.8 rem;
-}
-h3{
-    font-size: 1.8 rem;
-}
-h1,h2,h3{
-    text-align: center;
+body {
+    font-size: 16px;
+    font-family: Krub, sans-serif;
 }
 
-body{
-    /* */
-    font-size: 16px;
-}
-.titulo{
+.titulo {
     text-align: center;
     font-size: 3.8rem;
 }
-.titulo span{
+
+.titulo span {
     font-size: 2rem;
 }
 
-.contenedor{
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.contenedor {
     max-width: 120rem;
-    /*margin-top: auto; cuando le quiero dar a una parte se pone la linea 31 a la 33
     margin: 0 auto;
-    margin-bottom: 0;
-    margin-left: auto;*/
-    margin:0 auto;
 }
-.nav-bg{
-    background-color: var(---secundario);
-}
-.navegacion-principal a{
-    background-color: var(---secundario);
-    color: var(---blanco);
-    /*quitar subrayado*/
-    text-decoration: none; 
+
+.navegacion-principal a {
+    color: var(--blanco);
+    text-decoration: none;
     padding: 1rem;
 }
-.navegacion-principal
-{
-    /*padding: 1rem;*/
+
+.navegacion-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content para filas y align-items para columnas*/
     justify-content: space-between;
     font-size: 2rem;
-    font-weight: bold; /*estilo*/
-}
-/*si al menos tiene 768px (tablet)*/
-@media(min-width: 768px)
-{
-        .navegacion-principal{
-            flex-direction: row;
-            justify-content: space-between;
-        }
+    font-weight: bold;
 }
 
-.navegacion-principal a:hover{
-    background-color: var(---primario);
-    color: var(---oscuro);
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        gap: 2rem;
+    }
 }
-.hero
-{
-    /*para regresar de unacarpeta*/ 
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.hero {
     background-image: url("../img/hero.jpg");
     background-repeat: no-repeat;
-    /*cover cubre la imagen con todo el tamaño*/
     background-size: cover;
-    height:450px; /*altura del elemento*/
-    position: relativo;/*manipular la posicion, el padre siempre debe ser relativo*/
+    text-align: center;
+    height: 450px;
+    position: relative;
 }
 
-.contenido-hero{
-    /*manipular la posicion, el hijo siempre debe ser absoluto*/
-    position:absolute;/*hijo*/
-    background-color: rgba(0,0,0,.7); /*alpha al 70*/
+.contenido-hero {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
     width: 100%;
-    height: 100;
-    height: 100;
-    /*alinearr vertical y horizontal*/
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .contenido-hero p,
 .contenido-hero h2 {
-    color: var(---blanco);
+    color: var(--blanco);
 }
-.ubicacion{
-    display:flex;
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.ubicacion {
+    display: flex;
     align-items: flex-end;
 }
 
-.boton{
-    /*color de fondo del boton*/
-    background-color: var(---secundario); /*color del boton*/
-    color: var(---blanco); /*color del texto*/
-    /*espacio interior. El primer valor es top-botom, el segundo vaor es right-left*/
-    padding-right: 3rem;
-    padding-left: 3rem;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    /*poner margen solo arriba, el margen entre cuidad de mexico y el btn*/
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
     margin-top: 3rem;
-    font-size: 2rem;
-    /*quitar subrayado*/
-    text-decoration: none;
-    /*convertir texto a mayuscula*/
-    text-transform: uppercase;
-    /*texto en negritas*/
-    font-weight: bold;
-    /*redondear bordes*/
     border-radius: .5rem;
-    /*para diseño movil*/
-    width:90%;
+    text-decoration: none;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 90%;
     text-align: center;
 }
-@media (min-width: 768px)
-{
-    .boton{
-        width:auto;
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
     }
 }
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    text-align: center;
+    line-height: 2;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
