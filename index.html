@@ -90,37 +90,39 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non corrupti mollitia, in iure veniam vero perspiciatis vitae, sed, dolorem quam ducimus eum. Delectus atque consequuntur unde illum harum commodi alias.</p>
             </section>
         </div>
-    </main>
+    
 
     <section>
         <h2>Contacto</h2>
-        <form>
+        <form class ="formulario">
             <fieldset>
                 <legend>Llena tus datos para establecer contacto</legend>
-                <div>
+                <div class="contenedor-campos">
+                <div class="campo">
                     <label>Nombre</label>
                     <input type="text" placeholder="Tu nombre">
                 </div>
-                <div>
+                <div class="campo">
                     <label>Telefono</label>
                     <input type="tel" placeholder="Tu telefono">
                 </div>
-                <div>
+                <div class="campo">
                     <label>Correo</label>
                     <input type="email" placeholder="Tu correo">
                 </div>
-                <div>
+                <div class="campo">
                     <label>Mensaje</label>
                     <textarea></textarea>
                 </div>
-                <div>
-                    <input type="submit" value="Enviar">
+                </div> <!--cierre de cotenedor-campos-->
+                <div class="alinear-derecha flex">
+                    <input class="boton w-sm-100" type="submit" value="Enviar">
                 </div>
             </fieldset>
         </form>
     </section>
-
-    <footer>
+    </main>
+    <footer class ="footer">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore dolores numquam fuga quo reprehenderit repellendus in provident vel eligendi inventore unde quod vero aspernatur repudiandae quis ducimus, officia non voluptatum!</p>
     </footer>
     <p>TODOS LOS DERECHOS RESERVADOS © Fernanda Urcelay</p>
